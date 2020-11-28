@@ -4,6 +4,7 @@
 <html lang="kr">
 
 <head>
+  <link rel="icon" type="image/png" href="/springapp/resources/images/racoon.png"/>
   <title>REALIZE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -76,7 +77,23 @@
        </div>
      </div>
    </section>
-
+	
+	
+	
+	<!-- test 공간 -->
+	<fieldset>
+		<legend>test</legend>
+		<ol>
+			<li><a href='<c:url value="/test.do"/>'>test</a></li>
+			
+			
+		</ol>
+	</fieldset>
+	
+	
+	
+	
+	
    <section class="ftco-section ftco-no-pb ftco-no-pt">
    	<div class="container-fluid px-0">
    		<div class="row no-gutters">

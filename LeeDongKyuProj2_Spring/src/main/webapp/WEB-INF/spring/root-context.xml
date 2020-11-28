@@ -25,7 +25,7 @@
 		<!-- 데이타소스:데이타베이스 연결정보 -->
 		<property name="dataSource" ref="dataSourceByJNDI"/>
 		<!-- 환경설정 파일 위치 설정 -->
-		<property name="configLocation" value="classpath:com/kosmo/springapp/noticeboard/mybatis/configuration.xml"/>
+		<property name="configLocation" value="classpath:com/kosmo/springapp/board/mybatis/configuration.xml"/>
 	</bean>
 	<!-- 2]SqlSessionTemplate -->
 	<bean id="template" class="org.mybatis.spring.SqlSessionTemplate">

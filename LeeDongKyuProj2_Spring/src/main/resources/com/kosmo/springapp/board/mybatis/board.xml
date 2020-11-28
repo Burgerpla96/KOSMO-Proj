@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
+<!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
+<mapper namespace="com.kosmo.springapp.board.mybatis.board">
+	
+	<!-- 자바빈 OneMemoDTO에  DB결과를 여기서 맵핑한다. id이름으로 접근해서 쓸 수 있다. -->
+	<!-- configuration.xml에서 별칭해서 oneMemoDTO 타입으로 쓸 수 있다. -->
+	<!-- resultMap을 하면 컬럼에 별칭을 해서 bean 객체의 속성과 컬럼명이 달라도 직접 매핑을 해서 괜찮다!!  -->
+	<resultMap type="boardDTO" id="boardDTOResult">
+		<!-- property는 자바빈의 속성명,  column은 table의 컬럼명 -->
+		<result property="b_no" column="b_no"/>
+		<result property="b_title" column="b_title"/>
+		<result property="b_content" column="b_content"/>
+		<result property="b_postDate" column="b_postDate"/>
+		<result property="b_visitCount" column="b_visitCount"/>
+		<result property="nickname" column="nickname"/>
+		<result property="b_like" column="b_like"/>
+		<result property="b_replyCount" column="b_replyCount"/> 
+		<!-- 
+		1:N관계 매핑용
+		column: 조인시 컬럼명
+		select: 자식테이블에서 조인시 컬럼명으로 조회시 쿼리문 아이디
+		javaType : OneMemoDTO의 자식레코드를 담을 컬렉션 타입
+		ofType : 자식의 DTO타입
+		 -->
+		 <!-- 조인시 column 명이 자식인지 부모인지 모른다.! B_NO 틀릴수도 -->
+		<collection property="replies" column="b_no" select="com.kosmo.springapp.board.mybatis.reply.replySelectList" javaType="List" ofType="com.kosmo.springapp.board.ReplyDTO"/>
+		<!-- namespace와 다른 경로로 select에  풀 경로를 준다. -->
+		<!-- select에 지정한  쿼리문이 실행!-->
+	</resultMap>
+	
+	
+	
+	<!-- 
+	쿼리문 작성법:
+	- 값에 해당하는 부분은 #{값}로 처리
+	- 객체에 해당하는 부분은 ${객체} 객체는 테이블명 혹은 컬럼명 등...
+	- #{값} 작성시  parameterType이 Map인 경우, 자바빈(DTO계열)인 경우는
+		 키값, 자바빈의 속성명(멤버변수명) 이여야 한다.
+		 단, parameterType이 int나 String 인 경우는 임의의 값을 줘도 무방
+	- 부등호(<,>)를 써야할 시, &lt; &gt;로 사용하기
+		혹은 [CDATA[WHERE sal >= 3000 ]] 쓰기
+	-->
+
+
+	
+	<!-- if element 쓸 때, EL문에서 ${} 뺀 것 처럼 쓰기 -->
+	<select id="boardSelectList" parameterType="java.util.Map" resultType="boardDTO">
+		SELECT * FROM 
+		(SELECT T.*,ROWNUM R FROM  
+		(SELECT b.*, m.nickname FROM REALIZE_MEMBER m JOIN BOARD b ON m.id = b.id ORDER BY b_no DESC) T)
+		
+	</select>
+	
+	
+	
+	
+
+
+
+		
+</mapper>
