@@ -149,5 +149,47 @@ ALTER TABLE R_UNLIKE
 	REFERENCES REPLY (r_no)
 ;
 
+/* Create SEQUENCE */
+CREATE SEQUENCE SEQ_BOARD
+INCREMENT BY 1
+MINVALUE 1 
+START WITH 1
+NOCACHE
+NOCYCLE;
+CREATE SEQUENCE SEQ_REPLY
+NOCACHE
+NOCYCLE;
+CREATE SEQUENCE SEQ_AUTH_SECURITY
+NOCACHE
+NOCYCLE;
+
+
+
+--확인
+select * from seq;
+--휴지통에 쓰레기 있으면 sqlplus에서 지우기
+select * from tab;
+
+
+DROP SEQUENCE SEQ_REALIZE_MEMBER;
+DROP SEQUENCE SEQ_REPLY;
+DROP SEQUENCE SEQ_AUTH_SECURITY;
+DROP SEQUENCE SEQ_BOARD;
+
+
+
+
+--예비 데이터
+insert into realize_member values('KIM','1234','김길동','20','M','기무길동','010-2344-1234','high_LV','');
+insert into board values(111,'제목','내용',SYSDATE,0,'KIM');
+select * from realize_member;
+select * from board;
+
+--쿼리 확인 
+SELECT * FROM 
+(SELECT T.*,ROWNUM R FROM  
+(SELECT b.*, m.nickname FROM REALIZE_MEMBER m 
+JOIN BOARD b ON m.id = b.id ORDER BY b_no DESC) T);
+commit;
 
 
