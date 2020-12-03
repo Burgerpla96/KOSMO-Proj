@@ -1,5 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -32,7 +33,9 @@
   <link rel="stylesheet" href="${resourcesPath}css/style.css">
 </head>
 <body>
-
+	
+	
+	<!-- 상단 메뉴바  -->
   <div class="page">
   <nav id="colorlib-main-nav" role="navigation">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
@@ -41,28 +44,35 @@
       <div class="colorlib-table-cell js-fullheight">
         <div class="row no-gutters">
           <div class="col-md-12 text-center">
-            <h1 class="mb-4"><a href="index.html" class="logo">REALIZE</a></h1>
+            <h1 class="mb-4"><a href="<c:url value='/'/>" class="logo">REALIZE</a></h1>
             <ul>
-              <li class="active"><a href="index.html"><span>Home</span></a></li>
-              <li><a href="about.html"><span>About</span></a></li>
-              <li><a href="blog.html"><span>Blog</span></a></li>
-              <li><a href="contact.html"><span>Contact</span></a></li>
+              <li class="active"><a href="<c:url value='/Login.do'/>"><span>Login</span></a></li>
+              <!-- 처리 로그아웃  -->
+              <li><a href="<c:url value='/Mypage.do'/>"><span>MyPage</span></a></li>
+              <li><a href="<c:url value='/Diary.do'/>"><span>Diary</span></a></li>
+              <li><a href="<c:url value='/Board.do'/>"><span>Board</span></a></li>
+              <li><a href="<c:url value='/Chatting.do'/>"><span>Chatting</span></a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </nav>
-  
+	<!-- 상단 메뉴바  -->
+
+
+
   <div id="colorlib-page">
     <header>
     	<div class="container">
        <div class="colorlib-navbar-brand">
-         <a class="colorlib-logo" href="index.html">REALIZE</a>
+         <a class="colorlib-logo" href="<c:url value='/'/>">REALIZE</a>
        </div>
        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
       </div>
     </header>
+    
+    
 
     <section class="hero-wrap js-fullheight">
      <div class="container-fluid px-0">
@@ -85,6 +95,7 @@
 		<legend>test</legend>
 		<ol>
 			<li><a href='<c:url value="/test.do"/>'>test</a></li>
+			<li><a href='<c:url value="/Write.do"/>'>Write</a></li>
 			
 			
 		</ol>

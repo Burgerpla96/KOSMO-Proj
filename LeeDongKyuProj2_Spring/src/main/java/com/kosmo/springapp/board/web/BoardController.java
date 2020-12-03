@@ -25,12 +25,44 @@ public class BoardController {
 	@RequestMapping("List.do")
 	public String list(@RequestParam Map map, Model model) {
 		
-		//System.out.println(map.toString());//param 넘어오는지 확인
+		//System.out.println(map.toString());//param 넘어오는지 확인 // {b_no=111}
 		List<BoardDTO> list = boardService.selectList(map);
-		//System.out.println(list.get(0).toString());
+		System.out.println(list.get(0).toString());//나오기는 한다.
 		model.addAttribute("list", list);
 		return "test/test.tiles";
 	}
+	
+	
+	@RequestMapping("Write.do")
+	public String write() {
+		//뷰정보 반환
+		return "board/Write.tiles";
+	}//////////test
+	
+	
+	
+	
+	@RequestMapping("test2.do")
+	public String list2(@RequestParam Map map, Model model) {
+		
+		//System.out.println(map.toString());//param 넘어오는지 확인 // {b_no=111}
+		List<Map> list = boardService.selectList2(map);
+		System.out.println(list.get(0).toString());//나오기는 한다.
+		model.addAttribute("list", list);
+		return "test/test.tiles";
+	}
+	
+	@RequestMapping("test3.do")
+	public String list3(@RequestParam Map map, Model model) {
+		
+		//System.out.println(map.toString());//param 넘어오는지 확인 // {b_no=111}
+		List<BoardDTO> list = boardService.selectList(map);
+		System.out.println(list.get(0).toString());//나오기는 한다.
+		model.addAttribute("list", list);
+		return "test/test3.tiles";
+	}
+	
+	
 	
 	
 	

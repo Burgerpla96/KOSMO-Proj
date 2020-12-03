@@ -29,6 +29,12 @@ public class BoardServiceImpl implements BoardService{
 		return dao.selectList(map);
 	}
 
+	
+	public List<Map> selectList2(Map map){
+		return dao.selectList2(map);
+	}
+	
+	
 	@Override
 	public int getTotalRecord(Map map) {
 		// TODO Auto-generated method stub

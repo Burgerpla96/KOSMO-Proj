@@ -19,7 +19,22 @@ ${resourcesPath}images/racoon.png
 	<!-- 작성하기 버튼 -->
 	<div class="row">
 		<div class="col-md-12 text-right">
-			<a href="<c:url value='/Board/List.do'/>/?b_no=111" class="btn btn-success">상세보기</a>
+			<a href="<c:url value='/Board/List.do'/>?b_no=111" class="btn btn-success">상세보기</a>
+		</div>
+	</div>
+	
+	
+		<!-- 작성하기 버튼 -->
+	<div class="row">
+		<div class="col-md-12 text-right">
+			<a href="<c:url value='/Board/test2.do'/>?b_no=111" class="btn btn-success">상세보기2</a>
+		</div>
+	</div>
+	${list[0].toString()}
+	
+	<div class="row">
+		<div class="col-md-12 text-right">
+			<a href="<c:url value='/Board/test3.do'/>?b_no=111" class="btn btn-success">상세보기3</a>
 		</div>
 	</div>
 	
@@ -48,7 +63,8 @@ ${resourcesPath}images/racoon.png
 						<tr>
 							<td>${totalRecordCount - (((nowPage - 1) * pageSize) + loop.index)}</td>
 							<td class="text-left">
-								<a href="<c:url value='/OneMemo/BBS/View.do?no=${item.no}&nowPage='/><c:out value='${param.nowPage}' default='1'/>">${item.title }</a>
+								<!-- <a href="<c:url value='/OneMemo/BBS/View.do?no=${item.no}&nowPage='/><c:out value='${param.nowPage}' default='1'/>">${item.title }</a>
+								 -->
 								<span class="badge">${item.commentCount}</span>
 							</td>
 							<td>${item.name}</td>

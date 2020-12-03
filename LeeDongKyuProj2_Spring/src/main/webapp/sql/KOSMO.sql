@@ -1,14 +1,15 @@
 
 /* Drop Tables */
-/*
+
 DROP TABLE AUTH_SECURITY CASCADE CONSTRAINTS;
 DROP TABLE B_LIKE CASCADE CONSTRAINTS;
+DROP TABLE FILE_SAVE CASCADE CONSTRAINTS;
 DROP TABLE R_LIKE CASCADE CONSTRAINTS;
 DROP TABLE R_UNLIKE CASCADE CONSTRAINTS;
 DROP TABLE REPLY CASCADE CONSTRAINTS;
 DROP TABLE BOARD CASCADE CONSTRAINTS;
 DROP TABLE REALIZE_MEMBER CASCADE CONSTRAINTS;
-*/
+
 
 
 
@@ -31,6 +32,7 @@ CREATE TABLE BOARD
 	b_content nvarchar2(2000) NOT NULL,
 	b_postdate date DEFAULT SYSDATE,
 	b_visitcount number DEFAULT 0,
+	b_category nvarchar2(20) NOT NULL,
 	id nvarchar2(50) NOT NULL,
 	PRIMARY KEY (b_no)
 );
@@ -41,6 +43,16 @@ CREATE TABLE B_LIKE
 	b_no number NOT NULL,
 	id nvarchar2(50) NOT NULL,
 	PRIMARY KEY (b_no, id)
+);
+
+
+CREATE TABLE FILE_SAVE
+(
+	f_no number NOT NULL,
+	f_name nvarchar2(50),
+	f_path nvarchar2(200) NOT NULL,
+	b_no number NOT NULL,
+	PRIMARY KEY (f_no)
 );
 
 
@@ -55,6 +67,7 @@ CREATE TABLE REALIZE_MEMBER
 	tel varchar2(20) NOT NULL,
 	v_level varchar2(20) NOT NULL,
 	introduction nvarchar2(200),
+	profile_picture nvarchar2(100),
 	PRIMARY KEY (id)
 );
 
@@ -91,6 +104,12 @@ CREATE TABLE R_UNLIKE
 /* Create Foreign Keys */
 
 ALTER TABLE B_LIKE
+	ADD FOREIGN KEY (b_no)
+	REFERENCES BOARD (b_no)
+;
+
+
+ALTER TABLE FILE_SAVE
 	ADD FOREIGN KEY (b_no)
 	REFERENCES BOARD (b_no)
 ;
@@ -149,6 +168,8 @@ ALTER TABLE R_UNLIKE
 	REFERENCES REPLY (r_no)
 ;
 
+
+--추가
 /* Create SEQUENCE */
 CREATE SEQUENCE SEQ_BOARD
 INCREMENT BY 1
@@ -162,7 +183,9 @@ NOCYCLE;
 CREATE SEQUENCE SEQ_AUTH_SECURITY
 NOCACHE
 NOCYCLE;
-
+CREATE SEQUENCE SEQ_FILE_SAVE
+NOCACHE
+NOCYCLE;
 
 
 --확인
@@ -171,17 +194,15 @@ select * from seq;
 select * from tab;
 
 
-DROP SEQUENCE SEQ_REALIZE_MEMBER;
+DROP SEQUENCE SEQ_BOARD;
 DROP SEQUENCE SEQ_REPLY;
 DROP SEQUENCE SEQ_AUTH_SECURITY;
-DROP SEQUENCE SEQ_BOARD;
-
-
+DROP SEQUENCE SEQ_FILE_SAVE;
 
 
 --예비 데이터
-insert into realize_member values('KIM','1234','김길동','20','M','기무길동','010-2344-1234','high_LV','');
-insert into board values(111,'제목','내용',SYSDATE,0,'KIM');
+insert into realize_member values('KIM','1234','김길동','20','M','기무길동','010-2344-1234','high_LV','','');
+insert into board values(111,'제목','내용',SYSDATE,0,'자유게시판','KIM');
 select * from realize_member;
 select * from board;
 
@@ -191,5 +212,3 @@ SELECT * FROM
 (SELECT b.*, m.nickname FROM REALIZE_MEMBER m 
 JOIN BOARD b ON m.id = b.id ORDER BY b_no DESC) T);
 commit;
-
-

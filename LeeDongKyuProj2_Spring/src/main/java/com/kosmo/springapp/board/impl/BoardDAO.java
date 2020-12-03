@@ -27,9 +27,17 @@ public class BoardDAO implements BoardService{
 
 	@Override
 	public List<BoardDTO> selectList(Map map) {
+		System.out.println("여기는 DAO");
+		System.out.println(sqlMapper.selectList("boardSelectList", map).toString());
 		return sqlMapper.selectList("boardSelectList", map);
 	}
 
+	
+	public List<Map> selectList2(Map map) {
+		return sqlMapper.selectList("member", map);
+	}
+	
+	
 	@Override
 	public int getTotalRecord(Map map) {
 		// TODO Auto-generated method stub

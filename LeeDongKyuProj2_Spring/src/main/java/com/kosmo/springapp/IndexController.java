@@ -15,6 +15,14 @@ public class IndexController {
 	
 	
 	
+	
+	
+
+		
+		
+		
+		
+		
 	@RequestMapping("/dynamicsql.do")
 	public String dynamicsql() {
 		//뷰정보 반환]
