@@ -17,8 +17,7 @@
 	<!-- 작성하기 버튼 -->
 	<div class="row">
 		<div class="col-md-12 text-right">
-			<a href="<c:url value="/OneMemo/BBS/Write.do"/>"
-				class="btn btn-success">등록</a>
+			<a href="<c:url value="/OneMemo/BBS/Write.do"/>" class="btn btn-success">등록</a>
 		</div>
 	</div>
 	<div class="row">

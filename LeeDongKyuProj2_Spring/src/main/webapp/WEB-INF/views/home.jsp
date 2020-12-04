@@ -50,7 +50,7 @@
               <!-- 처리 로그아웃  -->
               <li><a href="<c:url value='/Mypage.do'/>"><span>MyPage</span></a></li>
               <li><a href="<c:url value='/Diary.do'/>"><span>Diary</span></a></li>
-              <li><a href="<c:url value='/Board.do'/>"><span>Board</span></a></li>
+              <li><a href="<c:url value='/Board/List.do'/>"><span>Board</span></a></li>
               <li><a href="<c:url value='/Chatting.do'/>"><span>Chatting</span></a></li>
             </ul>
           </div>
@@ -124,11 +124,13 @@
    							</div>
    							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
    							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
+   							<p class="mb-0 mt-4"><a href="<c:url value='/Board/List.do'/>" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
    						</div>
    					</div>
    				</div>
    			</div>
+   			
+   			
    			<div class="col-md-12 blog-wrap">
    				<div class="row no-gutters align-items-center">
    					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_2.jpg);">
@@ -145,11 +147,13 @@
    							</div>
    							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
    							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
+   							<p class="mb-0 mt-4"><a href="<c:url value='/Board/List.do'/>" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
    						</div>
    					</div>
    				</div>
    			</div>
+   			
+   			
    			<div class="col-md-12 blog-wrap bg-darken">
    				<div class="row no-gutters align-items-center">
    					<div class="col-md-6 d-flex justify-content-center align-items-center order-md-last js-fullheight">
@@ -171,6 +175,9 @@
    					</div>
    				</div>
    			</div>
+   			
+   			<!-- 검은색 메인 잡지 까지    -->
+   			
    			<div class="col-md-12 blog-wrap">
    				<div class="row no-gutters align-items-center">
    					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_5.jpg);">
