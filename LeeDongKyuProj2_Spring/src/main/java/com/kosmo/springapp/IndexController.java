@@ -15,7 +15,11 @@ public class IndexController {
 	
 	
 	
-	
+	@RequestMapping("/test2.do")
+	public String test2() {
+		//뷰정보 반환
+		return "test/test2";
+	}//////////test
 	
 
 		

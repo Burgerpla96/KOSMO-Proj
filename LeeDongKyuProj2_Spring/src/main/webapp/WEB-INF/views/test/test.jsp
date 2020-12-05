@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-    
-tiles는 된다.
-
-<br/>
-${resourcesPath}images/racoon.png
-<br/>
 
 
 <div class="container">
@@ -79,3 +73,32 @@ ${resourcesPath}images/racoon.png
 	<!-- row -->
 	
 </div>
+
+<textarea>
+	ㅇ
+	ㅇ
+	ㅇ
+	ㅇ
+	ㅇ
+	ㅇ
+	
+	ㅇ
+	ㅇ
+	ㅇ
+	ㅇ
+	ㅇ
+	
+	ㅇ
+	ㅇ
+	ㅇ
+	
+	ㅇ
+	ㅇ
+	ㅇ
+	
+	ㅇ
+	ㅇ
+	ㅇ
+	
+	
+</textarea>

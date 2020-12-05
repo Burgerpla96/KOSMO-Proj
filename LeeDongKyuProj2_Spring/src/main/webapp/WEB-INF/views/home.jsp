@@ -96,9 +96,15 @@
 		<ol>
 			<li><a href='<c:url value="/test.do"/>'>test</a></li>
 			<li><a href='<c:url value="/Write.do"/>'>Write</a></li>
+			<li><a href='<c:url value="/test2.do"/>'>test2</a></li>
 			
 			
 		</ol>
+		  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+		
+		<form action="#">
+			<input type="password" value="비번" placeholder="밥">
+		</form>
 	</fieldset>
 	
 	
@@ -439,7 +445,7 @@
   </div>
 
 
-  <script src="${resourcesPath}js/jquery.min.js"></script>
+  <script src="/springapp/resources/js/jquery.min.js"></script>
   <script src="${resourcesPath}js/jquery-migrate-3.0.1.min.js"></script>
   <script src="${resourcesPath}js/popper.min.js"></script>
   <script src="${resourcesPath}js/bootstrap.min.js"></script>
