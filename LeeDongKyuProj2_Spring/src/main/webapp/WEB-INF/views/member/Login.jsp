@@ -4,109 +4,174 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!-- Login.jsp -->
-<div class="container">
-	<!-- 점보트론(Jumbotron) -->
-	<div class="jumbotron">
-		<h1>
-			한줄 메모 게시판<small>로그인 페이지</small>
-		</h1>
-	</div>
-	<!-- 시큐리티 사용하지 않을 때 -->
-	<%-- 
-	<c:if test="${! empty NotMember }">
-		<div class="row">
-			<div class="col-sm-5 alert alert-warning fade in">
-				<button class="close" data-dismiss="alert">
-					<span>&times;</span>
-				</button>
-				 ${NotMember }
-			</div>
-		</div>
-	</c:if>
-	<div class="row">
-		<c:if test="${not empty sessionScope.id }" var="isLogin">
 
-			<div class="col-sm-5 alert alert-success">${sessionScope.id }님
-				즐감하세요</div>
+<link rel="stylesheet" href="/springapp/resources/css/login_bootstrap.min.css">
 
-		</c:if>
-		<c:if test="${not isLogin }">
-			<div class="col-sm-12">
-				<form class="form-horizontal" method="post"
-					action="<c:url value='/OneMemo/Auth/LoginProcess.do'/>">
-					<div class="form-group">
-						<label for="id" class="col-sm-2  control-label">아이디</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" name="id" id="id"
-								placeholder="아이디를 입력하세요">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="pwd" class="col-sm-2  control-label">비밀번호</label>
-						<div class="col-sm-3">
-							<input type="password" class="form-control" id="pwd" name="pwd"
-								placeholder="비밀번호를 입력하세요">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-danger">로그인</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</c:if>
-	</div>
-	--%>
-	
-	<!-- 시큐리티 사용할 때 -->
-	<c:if test="${not empty param.NotLogin}">
-		<div class="row">
-			<div class="col-xs-offset-1 col-xs-6 alert alert-warning fade in">
-				<button class="close" data-dismiss="alert">
-					<span>&times;</span>
-				</button>
-				 아이디와 비번이 틀려요
-			</div>
-		</div>
-	</c:if>
-	<div class="row">
-		<sec:authorize access="isAuthenticated()"><!-- true에서 코드가 보인다. -->
-			<div class="col-sm-5 alert alert-success"><sec:authentication property="principal.username"/>님 반가워요</div>
-		</sec:authorize>
-		<!-- 인증되지 않은 사용자에게 로그인 form 보여주기 -->
-		<sec:authorize access="isAnonymous()">
-			<div class="col-sm-12">
-				<form class="form-horizontal" method="post"
-					action="<c:url value='/OneMemo/Auth/LoginProcess.do'/>">
-					<!-- csrf security... -->
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<div class="form-group">
-						<label for="id" class="col-sm-2  control-label">아이디</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" name="id" id="id"
-								placeholder="아이디를 입력하세요">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="pwd" class="col-sm-2  control-label">비밀번호</label>
-						<div class="col-sm-3">
-							<input type="password" class="form-control" id="pwd" name="pwd"
-								placeholder="비밀번호를 입력하세요">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-danger">로그인</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</sec:authorize>
-	</div>
-	
-	
+<!-- /LeeDongKyuProj2_Spring/src/main/webapp/resources/css/login_bootstrap.min.css
 
+/LeeDongKyuProj2_Spring/src/main/webapp/resources/js/login_bootstrap.bundle.min.js
+
+/LeeDongKyuProj2_Spring/src/main/webapp/resources/js/login_jquery.slim.js
+ -->
+<script src="/springapp/resources/js/login_bootstrap.bundle.min.js"></script>
+
+<script src="/springapp/resources/js/login_jquery.slim.js"></script>
+<!-- 
+<link rel="stylesheet" href="/springapp/resources/css/css/login_style2.css">
+ -->
+
+<style>
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+</style>
+<div class="card">
+	안녕
+	
 </div>
 
 
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+              <form>
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Password</label>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                <div class="text-center">
+                  <a class="small" href="#">Forgot password?</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

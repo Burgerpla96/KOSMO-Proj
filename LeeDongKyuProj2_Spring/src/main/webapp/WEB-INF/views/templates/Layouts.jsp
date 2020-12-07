@@ -13,9 +13,10 @@
 <link rel="icon" type="image/png"
 	href="/springapp/resources/images/racoon.png" />
 <title>REALIZE</title>
-<!-- 
+ <!-- 폰트  -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+<!--
 <link rel="stylesheet" href="/springapp/resources/css/open-iconic-bootstrap.min.css">
 <link rel="stylesheet" href="/springapp/resources/css/animate.css">
 <link rel="stylesheet" href="/springapp/resources/css/owl.carousel.min.css">
@@ -30,9 +31,10 @@
 <link rel="stylesheet" href="/springapp/resources/css/style.css">
  -->
 <!-- 부트스트랩 -->
+<!-- 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
+ -->
 </head>
 <body>
 	<!-- top 부분 -->

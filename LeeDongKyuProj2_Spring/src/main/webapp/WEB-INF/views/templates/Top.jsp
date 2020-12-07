@@ -11,7 +11,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+ 
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <script>
 	function isLogin(){
@@ -41,62 +43,40 @@
 </script>
 
 <!-- 로그아웃 get방식을 post방식으로 변경하기 위한 form 추가 -->
-<form id="logoutForm" method="post"
-	action="<c:url value="/OneMemo/Auth/Logout.do"/>">
-	<input type="hidden" name="${_csrf.parameterName}"
-		value="${_csrf.token}" />
+<form id="logoutForm" method="post" action="<c:url value="/OneMemo/Auth/Logout.do"/>">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 
 
-
-
-
 <style>
-body {
-	padding-top: 90px;
-}
-
-#my-navbar {
-	background-color: #1E90FF;
-	border: 0;
-	/*
-	padding-left: 30px;
-	padding-right: 30px;*/
-	height: 60px;
-}
-form {
-	/*height: 30px;*/
-}
-.navbar-header {
-	/*align-self: right;*/
-}
-#my-form{
-	float: right;
-}
+ 	body{
+ 		padding-top: 70px;
+ 		padding-bottom: 70px;
+ 	}
 </style>
-
-<c:url value="/"/>
-
-
 <!--상단메뉴 시작-->
-<!--
-<nav id="colorlib-main-nav" role="navigation">-->
- <nav class="navbar navbar-default navbar-fixed-top navbar-left" id="my-navbar">
-	<div class="container-fluid navbar-left">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+	<div class="container-fluid">
 		<!--화면 크기가 작을때 보여지는 네비게이션바(모바일용)  -->
-		<div class="navbar-header ">
+		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="#collapse-menu">
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href='<c:url value="/"/>' style="color: white"><span
+			<a class="navbar-brand" href='<c:url value="/"/>'><span
 				class="glyphicon glyphicon-education"></span> KOSMO</a>
 		</div>
 		<!-- 화면 크기가 클때 상단에 보여지는 메뉴(데스크탑용) -->
 		<div class="collapse navbar-collapse" id="collapse-menu">
-			
-			<ul class="nav navbar-nav ">
+			<!-- 네비게이션바에 폼 추가 -->
+			<form class="navbar-form navbar-right">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="검색">
+				</div>
+				<button type="submit" class="btn btn-info">확인</button>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<c:url value="/"/>">HOME</a></li>
 				<!-- spring security 사용 안할시 -->
 				<%-- 
@@ -121,12 +101,12 @@ form {
 				<!-- AJAX로 처리해서 하얀 화면에 alert뜨는것 바꾸기 -->
 				<!-- ajax로 로그인 여부 판단후 이동 -->
 				<li><a href="javascript:isLogin()">한줄 댓글 게시판</a></li>
-
+				 
 				<li><a href="#">공지사항</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
-
 <!--  상단 메뉴 끝 -->
 
+<link rel="stylesheet" href="/springapp/resources/css/html5reset-1.6.1.css">

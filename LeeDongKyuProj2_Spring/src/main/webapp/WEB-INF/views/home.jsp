@@ -46,7 +46,7 @@
           <div class="col-md-12 text-center">
             <h1 class="mb-4"><a href="<c:url value='/'/>" class="logo">REALIZE</a></h1>
             <ul>
-              <li class="active"><a href="<c:url value='/Login.do'/>"><span>Login</span></a></li>
+              <li class="active"><a href="<c:url value='/Member/Login.do'/>"><span>Login</span></a></li>
               <!-- 처리 로그아웃  -->
               <li><a href="<c:url value='/Mypage.do'/>"><span>MyPage</span></a></li>
               <li><a href="<c:url value='/Diary.do'/>"><span>Diary</span></a></li>
@@ -114,23 +114,24 @@
    <section class="ftco-section ftco-no-pb ftco-no-pt">
    	<div class="container-fluid px-0">
    		<div class="row no-gutters">
+   		
    			<div class="col-md-12 blog-wrap">
    				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_1.jpg);">
+   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/kosmo1.jpg);">
    						
    					</div>
    					<div class="col-md-6">
    						<div class="text p-md-5 p-4 ftco-animate">
    							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_1.jpg);"></div>
+   								<div class="img" style="background-image: url(${resourcesPath}images/watermelon_sugar.jpg);"></div>
    								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
+   									<h4 class="mb-0">Kim Long Leg(회원 닉네임 뿌리기)</h4>
+   									<span>간단한 자기소개(introduction)</span>
    								</div>
    							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="<c:url value='/Board/List.do'/>" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
+   							<h2 class="mb-4"><a href="blog-single.html">아싸~ (board title 뿌리기) </a></h2>
+   							<p> 얼마나 긴지 상상하지 못할걸? (content 뿌리기)</p>
+   							<p class="mb-0 mt-4"><a href="<c:url value='/Board/List.do'/>" class="btn btn-primary">Read more(List로 이동) <span class="ion-ios-arrow-forward"></span></a></p>
    						</div>
    					</div>
    				</div>
@@ -139,27 +140,34 @@
    			
    			<div class="col-md-12 blog-wrap">
    				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_2.jpg);">
-   						
+   					<div class="col-md-6 img js-fullheight" >
+   						<video src="/springapp/resources/videos/kosmo2.mp4" width=100% height=100% controls>재생이 불가능 합니다.</video>
    					</div>
    					<div class="col-md-6">
    						<div class="text p-md-5 p-4 ftco-animate">
    							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_2.jpg);"></div>
+   								<div class="img" style="background-image: url(${resourcesPath}images/person_2.jpg);"> </div>
    								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
+   									<h4 class="mb-0">Baeg The Baby Car</h4>
+   									<span>가속 잘함(introduction)</span>
    								</div>
    							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
+   							<h2 class="mb-4"><a href="blog-single.html">동영상인지, 이미지인지 분석해서 좋아요수에 따라 출력</a></h2>
    							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
    							<p class="mb-0 mt-4"><a href="<c:url value='/Board/List.do'/>" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
    						</div>
    					</div>
    				</div>
    			</div>
+   			<!--
+   			동영상인지, 이미지인지 분석해서 좋아요수에 따라 출력
+   			만약 좋아요 수가 같을경우 no에 따라서 no가 최신인 것을 우선 출력
+   			-->
    			
    			
+   			
+   			
+   			<!-- 검은색 메인     -->
    			<div class="col-md-12 blog-wrap bg-darken">
    				<div class="row no-gutters align-items-center">
    					<div class="col-md-6 d-flex justify-content-center align-items-center order-md-last js-fullheight">
@@ -174,15 +182,16 @@
    									<span>fashion.com</span>
    								</div>
    							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
+   							<h2 class="mb-4"><a href="blog-single.html">여기가 검은색</a></h2>
    							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
    							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
    						</div>
    					</div>
    				</div>
    			</div>
+   			<!-- 검은색 메인     -->
    			
-   			<!-- 검은색 메인 잡지 까지    -->
+   			
    			
    			<div class="col-md-12 blog-wrap">
    				<div class="row no-gutters align-items-center">
@@ -205,6 +214,8 @@
    					</div>
    				</div>
    			</div>
+   			
+   			
    			<div class="col-md-12 blog-wrap">
    				<div class="row no-gutters align-items-center">
    					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_6.jpg);">
@@ -226,145 +237,19 @@
    					</div>
    				</div>
    			</div>
-   			<div class="col-md-12 blog-wrap">
-   				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_7.jpg);">
-   						
-   					</div>
-   					<div class="col-md-6">
-   						<div class="text p-md-5 p-4 ftco-animate">
-   							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_4.jpg);"></div>
-   								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
-   								</div>
-   							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-   			<div class="col-md-12 blog-wrap">
-   				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_8.jpg);">
-   						
-   					</div>
-   					<div class="col-md-6">
-   						<div class="text p-md-5 p-4 ftco-animate">
-   							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_3.jpg);"></div>
-   								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
-   								</div>
-   							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-   			<div class="col-md-12 blog-wrap">
-   				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_9.jpg);">
-   						
-   					</div>
-   					<div class="col-md-6">
-   						<div class="text p-md-5 p-4 ftco-animate">
-   							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_3.jpg);"></div>
-   								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
-   								</div>
-   							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-
-   			<div class="col-md-12 blog-wrap">
-   				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_10.jpg);">
-   						
-   					</div>
-   					<div class="col-md-6">
-   						<div class="text p-md-5 p-4 ftco-animate">
-   							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_3.jpg);"></div>
-   								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
-   								</div>
-   							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-
-   			<div class="col-md-12 blog-wrap bg-darken">
-   				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 d-flex justify-content-center align-items-center order-md-last js-fullheight">
-   						<div class="img" style="background-image: url(${resourcesPath}images/image_11.jpg);"></div>
-   					</div>
-   					<div class="col-md-6">
-   						<div class="text p-md-5 p-4 ftco-animate">
-   							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_2.jpg);"></div>
-   								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
-   								</div>
-   							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-
-   			<div class="col-md-12 blog-wrap">
-   				<div class="row no-gutters align-items-center">
-   					<div class="col-md-6 img js-fullheight" style="background-image: url(${resourcesPath}images/image_12.jpg);">
-   						
-   					</div>
-   					<div class="col-md-6">
-   						<div class="text p-md-5 p-4 ftco-animate">
-   							<div class="icon d-flex align-items-center mb-5">
-   								<div class="img" style="background-image: url(${resourcesPath}images/person_3.jpg);"></div>
-   								<div class="position pl-3">
-   									<h4 class="mb-0">Jamie Jonson</h4>
-   									<span>fashion.com</span>
-   								</div>
-   							</div>
-   							<h2 class="mb-4"><a href="blog-single.html">Make Peace With Your Broken Pieces</a></h2>
-   							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-   							<p class="mb-0 mt-4"><a href="#" class="btn btn-primary">Read more <span class="ion-ios-arrow-forward"></span></a></p>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
+   			
+   			
    		</div>
    	</div>
    </section>
 
-    
+   
+     <!--  footer -->
     <footer class="ftco-footer ftco-section img">
    	<div class="overlay"></div>
      <div class="container">
        <div class="row mb-5">
-         <div class="col-lg-3">
+         <div class="col-lg-3"><!-- footer에서 가로 공간 비율 -->
            <div class="ftco-footer-widget mb-4">
              <h2 class="ftco-heading-2 logo"><a href="index.html">REALIZE</a></h2>
              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
