@@ -62,6 +62,7 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/js/google-map.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
- -->
+-->
+ 
 </body>
 </html>

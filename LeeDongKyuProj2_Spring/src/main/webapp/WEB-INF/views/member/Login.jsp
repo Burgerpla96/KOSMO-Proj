@@ -7,18 +7,19 @@
 
 <link rel="stylesheet" href="/springapp/resources/css/login_bootstrap.min.css">
 
-<!-- /LeeDongKyuProj2_Spring/src/main/webapp/resources/css/login_bootstrap.min.css
+<!-- 
+/LeeDongKyuProj2_Spring/src/main/webapp/resources/css/login_bootstrap.min.css
 
 /LeeDongKyuProj2_Spring/src/main/webapp/resources/js/login_bootstrap.bundle.min.js
 
 /LeeDongKyuProj2_Spring/src/main/webapp/resources/js/login_jquery.slim.js
- -->
+-->
 <script src="/springapp/resources/js/login_bootstrap.bundle.min.js"></script>
 
 <script src="/springapp/resources/js/login_jquery.slim.js"></script>
 <!-- 
 <link rel="stylesheet" href="/springapp/resources/css/css/login_style2.css">
- -->
+-->
 
 <style>
 :root {

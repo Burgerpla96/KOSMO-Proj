@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 	
+	
 	@RequestMapping("/test.do")
 	public String test() {
 		//뷰정보 반환
 		return "test/test.tiles";
 	}//////////test
-	
 	
 	
 	@RequestMapping("/test2.do")
