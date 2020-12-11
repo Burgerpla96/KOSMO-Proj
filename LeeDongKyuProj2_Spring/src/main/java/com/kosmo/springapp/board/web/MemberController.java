@@ -9,7 +9,7 @@ public class MemberController {
 	
 	@RequestMapping("Login.do")
 	public String login() {
-		return "member/Login2.tiles";
+		return "member/Login4.tiles";
 	}////////////Login
 	
 	
